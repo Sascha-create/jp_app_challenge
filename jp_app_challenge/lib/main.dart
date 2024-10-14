@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jp_app_challenge/screens/start_screen.dart';
+import 'package:jp_app_challenge/widgets/top_card.dart';
+import 'config/styles.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,11 +12,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      theme: myTheme,
+      home: const Scaffold(
+        body: StartScreen(),
       ),
     );
   }
