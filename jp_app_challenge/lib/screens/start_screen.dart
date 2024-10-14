@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jp_app_challenge/screens/home_screen.dart';
+import 'package:jp_app_challenge/widgets/start_button.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({
@@ -52,7 +53,7 @@ class StartScreen extends StatelessWidget {
                             style: Theme.of(context).textTheme.titleSmall,
                             "Explore Angi's most popular snak selection\n and get instantly happy"),
                       ),
-                      StartButton(),
+                      const StartButton(),
                     ],
                   ),
                 ),
@@ -61,39 +62,6 @@ class StartScreen extends StatelessWidget {
           ],
         )
       ],
-    );
-  }
-}
-
-class StartButton extends StatelessWidget {
-  const StartButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
-        );
-      },
-      child: Container(
-        margin: EdgeInsets.all(16),
-        width: 180,
-        height: 40,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            gradient: LinearGradient(begin: Alignment(0, 0.5), colors: [
-              Colors.pink.shade300,
-              Colors.pink.shade200,
-              Colors.orangeAccent.shade100
-            ])),
-        child: Center(
-            child: Text(
-                style: Theme.of(context).textTheme.titleMedium, "Order Now")),
-      ),
     );
   }
 }

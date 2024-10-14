@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:jp_app_challenge/dish_item.dart';
 
 class DishCard extends StatelessWidget {
-  const DishCard({super.key});
+  const DishCard({super.key, required this.dishItem});
+
+  final DishItem dishItem;
 
   @override
   Widget build(BuildContext context) {
@@ -18,25 +21,35 @@ class DishCard extends StatelessWidget {
             Colors.grey,
           ], transform: GradientRotation(80)),
         ),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child:
-                  Image.asset(scale: 3.5, "assets/images/cat cupcakes_3D.png"),
-            ),
-            Text(style: Theme.of(context).textTheme.titleMedium, "Title"),
-            Text(style: Theme.of(context).textTheme.titleSmall, "description"),
-            Row(
-              children: [
-                const Icon(Icons.euro),
-                Text(style: Theme.of(context).textTheme.titleSmall, "price"),
-                const Expanded(child: SizedBox()),
-                const Icon(Icons.favorite_outline),
-                Text(style: Theme.of(context).textTheme.titleSmall, "200"),
-              ],
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Image.asset(scale: 3.5, dishItem.imagePath),
+              ),
+              Text(
+                  style: Theme.of(context).textTheme.titleMedium,
+                  dishItem.title),
+              Text(
+                  style: Theme.of(context).textTheme.titleSmall,
+                  dishItem.description),
+              Row(
+                children: [
+                  const Icon(Icons.euro),
+                  Text(
+                      style: Theme.of(context).textTheme.titleSmall,
+                      "${dishItem.price}"),
+                  const Expanded(child: SizedBox()),
+                  const Icon(Icons.favorite_outline),
+                  Text(
+                      style: Theme.of(context).textTheme.titleSmall,
+                      "${dishItem.points}"),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

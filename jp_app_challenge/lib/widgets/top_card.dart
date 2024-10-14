@@ -7,9 +7,13 @@ class TopCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Center(child: Image.asset("assets/images/top_card.png")),
+        Center(child: Image.asset(scale: 0.9, "assets/images/top_card.png")),
+        Positioned(
+            top: 60,
+            right: 8,
+            child: Image.asset(scale: 2, "assets/images/Burger_3D.png")),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 64.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -28,17 +32,28 @@ class TopCard extends StatelessWidget {
                   )
                 ],
               ),
-              Text(
-                  style: Theme.of(context).textTheme.titleSmall,
-                  "Delish vegan Burger that taste like Heaven"),
-              Row(
-                children: [
-                  Icon(Icons.euro),
-                  Text(style: Theme.of(context).textTheme.titleMedium, "13,99"),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                    style: Theme.of(context).textTheme.titleSmall,
+                    "Delish vegan Burger that taste like Heaven"),
               ),
-              ElevatedButton(
-                  onPressed: () {}, child: const Text("Add to order"))
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    const Icon(Icons.euro),
+                    Text(
+                        style: Theme.of(context).textTheme.titleMedium,
+                        "13,99"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 64.0),
+                child: ElevatedButton(
+                    onPressed: () {}, child: const Text("Add to order")),
+              )
             ],
           ),
         ),
