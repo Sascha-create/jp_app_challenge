@@ -28,7 +28,7 @@ List<DishItem> dishItems = [
   DishItem(
       imagePath: "assets/images/Icecream_3D.png",
       title: "Vanilla Waffle",
-      description: "Vanilla, Choclate on Waffle",
+      description: "Vanilla on Waffle",
       price: 8.99,
       points: 150),
   DishItem(

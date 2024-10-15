@@ -26,7 +26,7 @@ class FancyButton extends StatelessWidget {
         height: 48,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            gradient: LinearGradient(begin: Alignment(0, 0.5), colors: [
+            gradient: LinearGradient(begin: const Alignment(0, 0.5), colors: [
               Colors.pink.shade300,
               Colors.pink.shade200,
               Colors.orangeAccent.shade100

@@ -11,5 +11,6 @@ ThemeData myTheme = ThemeData(
       titleLarge: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
       titleMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
       titleSmall: TextStyle(color: Colors.white),
+      labelLarge: TextStyle(color: Colors.grey),
     ),
     iconTheme: const IconThemeData(color: Colors.white, size: 20));
