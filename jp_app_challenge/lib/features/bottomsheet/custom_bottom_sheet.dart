@@ -9,12 +9,14 @@ import 'package:jp_app_challenge/widgets/top_card.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({
-    super.key, required this.dishItem,
+    super.key,
+    required this.dishItem,
   });
   final DishItem dishItem;
 
   @override
   Widget build(BuildContext context) {
+    DishItem currentItem = dishItem;
     return Container(
       height: MediaQuery.of(context).size.height * 0.89,
       decoration: BoxDecoration(
@@ -28,12 +30,12 @@ class CustomBottomSheet extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Stack(children: [
-          const Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Column(
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,9 +43,10 @@ class CustomBottomSheet extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 32.0),
-                    child:
-                        FancyButton(width: 390, text: "Add to order for 8.99"),
+                    padding: const EdgeInsets.symmetric(vertical: 32.0),
+                    child: FancyButton(
+                        width: 390,
+                        text: "Add to order for ${currentItem.price}"),
                   ),
                 ],
               ),
@@ -56,7 +59,9 @@ class CustomBottomSheet extends StatelessWidget {
                 Container(
                     transform: Matrix4.translationValues(0, -140, 0),
                     child: Image.asset(dishItem.imagePath)),
-                const BottomSheetDescription(),
+                BottomSheetDescription(
+                  dishItem: currentItem,
+                ),
                 Positioned(
                   top: 0,
                   right: 0,

@@ -3,11 +3,15 @@ import 'package:glass/glass.dart';
 import 'package:jp_app_challenge/dish_item.dart';
 
 class BottomSheetDescription extends StatelessWidget {
-  const BottomSheetDescription({super.key,});
-  
+  const BottomSheetDescription({
+    super.key,
+    required this.dishItem,
+  });
+  final DishItem dishItem;
 
   @override
   Widget build(BuildContext context) {
+    DishItem currentItem = dishItem;
     return Positioned(
       bottom: -170,
       child: Container(
@@ -33,13 +37,13 @@ class BottomSheetDescription extends StatelessWidget {
                       size: 18,
                     ),
                   ),
-                  Text(style: Theme.of(context).textTheme.labelLarge, "200")
+                  Text(style: Theme.of(context).textTheme.labelLarge, "${currentItem.points}")
                 ],
               ),
             ),
             Text(
                 style: Theme.of(context).textTheme.headlineMedium,
-                "Mogli's Cup"),
+                currentItem.title),
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
@@ -56,7 +60,7 @@ class BottomSheetDescription extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(Icons.euro),
-                  Text(style: Theme.of(context).textTheme.titleMedium, "8.99")
+                  Text(style: Theme.of(context).textTheme.titleMedium, "${currentItem.price}")
                 ],
               ),
             ),

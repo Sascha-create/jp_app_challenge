@@ -69,14 +69,20 @@ class DishCard extends StatelessWidget {
                         horizontal: 16.0, vertical: 10),
                     child: Row(
                       children: [
-                        const Icon(Icons.euro),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 4.0),
+                          child: Icon(Icons.euro),
+                        ),
                         Text(
                             style: Theme.of(context).textTheme.titleSmall,
                             "${dishItem.price}"),
                         const Expanded(child: SizedBox()),
-                        const Icon(
-                          Icons.favorite_outline,
-                          color: Colors.grey,
+                        const Padding(
+                          padding: EdgeInsets.only(right: 4.0),
+                          child: Icon(
+                            Icons.favorite_outline,
+                            color: Colors.grey,
+                          ),
                         ),
                         Text(
                             style: Theme.of(context).textTheme.labelLarge,
