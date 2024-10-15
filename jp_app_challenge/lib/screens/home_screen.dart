@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: dishItems.length,
                       itemBuilder: (BuildContext context, int index) =>
-                          DishCard(dishItem: dishItems[index])),
+                          DishCard(dishItem: dishItems[index],currentIndex: index,)),
                 ),
                 const SizedBox(
                   height: 16,

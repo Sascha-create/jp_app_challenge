@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:jp_app_challenge/dish_item.dart';
 import 'package:jp_app_challenge/screens/home_screen.dart';
-import 'package:jp_app_challenge/widgets/custom_bottom_sheet.dart';
+import 'package:jp_app_challenge/features/bottomsheet/custom_bottom_sheet.dart';
 
 class DishCard extends StatelessWidget {
-  const DishCard({super.key, required this.dishItem});
+  const DishCard(
+      {super.key, required this.dishItem, required this.currentIndex});
 
   final DishItem dishItem;
+  final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
+    DishItem currentItem = dishItem;
     return GestureDetector(
       onTap: () => showModalBottomSheet(
           context: context,
           isScrollControlled: true,
           builder: (BuildContext context) {
-            return const CustomBottomSheet();
+            return CustomBottomSheet(
+              dishItem: currentItem,
+            );
           }),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),

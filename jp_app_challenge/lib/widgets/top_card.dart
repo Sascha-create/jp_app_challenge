@@ -11,9 +11,10 @@ class TopCard extends StatelessWidget {
     return Stack(
       children: [
         Center(
-            child: Image.asset(
-                scale: 0.9,
-                "assets/images/top_card.png")), // <== noch zum Container machen für Glaseffekt
+            child: Opacity(
+          opacity: 0.7,
+          child: Image.asset(scale: 0.9, "assets/images/top_card.png"),
+        )), // <== noch zum Container machen für Glaseffekt
         Positioned(
             top: 60,
             right: 8,
@@ -55,8 +56,8 @@ class TopCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.only(top: 48.0),
+              const Padding(
+                  padding: EdgeInsets.only(top: 48.0),
                   child: FancyButton(width: 120, text: "Add to Order"))
             ],
           ),
