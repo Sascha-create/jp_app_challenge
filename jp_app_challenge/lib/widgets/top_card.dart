@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:glass/glass.dart';
+import 'package:jp_app_challenge/screens/start_screen.dart';
+import 'package:jp_app_challenge/widgets/fancy_button.dart';
 
 class TopCard extends StatelessWidget {
   const TopCard({super.key});
@@ -7,7 +10,10 @@ class TopCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Center(child: Image.asset(scale: 0.9, "assets/images/top_card.png")),
+        Center(
+            child: Image.asset(
+                scale: 0.9,
+                "assets/images/top_card.png")), // <== noch zum Container machen für Glaseffekt
         Positioned(
             top: 60,
             right: 8,
@@ -50,10 +56,8 @@ class TopCard extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 64.0),
-                child: ElevatedButton(
-                    onPressed: () {}, child: const Text("Add to order")),
-              )
+                  padding: const EdgeInsets.only(top: 48.0),
+                  child: FancyButton(width: 120, text: "Add to Order"))
             ],
           ),
         ),

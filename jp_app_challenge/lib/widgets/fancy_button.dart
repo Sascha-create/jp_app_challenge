@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:jp_app_challenge/dish_data.dart';
 import 'package:jp_app_challenge/screens/home_screen.dart';
 
-class StartButton extends StatelessWidget {
-  const StartButton({
+class FancyButton extends StatelessWidget {
+  const FancyButton({
     super.key,
+    required this.width,
+    required this.text,
   });
+  final double width;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +22,8 @@ class StartButton extends StatelessWidget {
         );
       },
       child: Container(
-        margin: EdgeInsets.all(16),
-        width: 180,
-        height: 40,
+        width: width,
+        height: 48,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             gradient: LinearGradient(begin: Alignment(0, 0.5), colors: [
@@ -29,8 +32,7 @@ class StartButton extends StatelessWidget {
               Colors.orangeAccent.shade100
             ])),
         child: Center(
-            child: Text(
-                style: Theme.of(context).textTheme.titleMedium, "Order Now")),
+            child: Text(style: Theme.of(context).textTheme.titleMedium, text)),
       ),
     );
   }

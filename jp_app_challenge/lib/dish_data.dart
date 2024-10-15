@@ -9,8 +9,8 @@ List<DishItem> dishItems = [
       points: 300),
   DishItem(
       imagePath: "assets/images/Ice.cream.png",
-      title: "Apple Cream",
-      description: "A Dream of Apple Icecream",
+      title: "Balu's Cup",
+      description: "Pistachio Icecream",
       price: 10.99,
       points: 150),
   DishItem(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:glass/glass.dart';
 import 'package:jp_app_challenge/screens/home_screen.dart';
-import 'package:jp_app_challenge/widgets/start_button.dart';
+import 'package:jp_app_challenge/widgets/fancy_button.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({
@@ -38,8 +39,8 @@ class StartScreen extends StatelessWidget {
                 height: 200,
                 width: 380,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(24),
-                    color: Colors.white.withOpacity(0.2)),
+                  borderRadius: BorderRadius.circular(24),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
@@ -53,11 +54,14 @@ class StartScreen extends StatelessWidget {
                             style: Theme.of(context).textTheme.titleSmall,
                             "Explore Angi's most popular snak selection\n and get instantly happy"),
                       ),
-                      const StartButton(),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 16.0),
+                        child: FancyButton(width: 180, text: "Order Now"),
+                      ),
                     ],
                   ),
                 ),
-              ),
+              ).asGlass(clipBorderRadius: BorderRadius.circular(24)),
             )
           ],
         )
