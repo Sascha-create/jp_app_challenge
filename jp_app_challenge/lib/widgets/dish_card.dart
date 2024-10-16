@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jp_app_challenge/dish_item.dart';
-import 'package:jp_app_challenge/screens/home_screen.dart';
+import 'package:jp_app_challenge/repositories/dish_item.dart';
 import 'package:jp_app_challenge/features/bottomsheet/custom_bottom_sheet.dart';
 
 class DishCard extends StatelessWidget {
@@ -48,10 +47,13 @@ class DishCard extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Image.asset(scale: 3.5, dishItem.imagePath),
+                    child: SizedBox(
+                        height: 160,
+                        child: Image.asset(scale: 3.5, dishItem.imagePath)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [

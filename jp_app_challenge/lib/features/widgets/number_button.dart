@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jp_app_challenge/features/bottomsheet/custom_bottom_sheet.dart';
+
 
 class NumberButton extends StatefulWidget {
   const NumberButton({super.key});
@@ -28,7 +28,7 @@ class _NumberButtonState extends State<NumberButton> {
         IconButton.outlined(
             onPressed: () {
               setState(() {
-                number = number + 1;
+                number++;
               });
             },
             icon: const Icon(Icons.add)),

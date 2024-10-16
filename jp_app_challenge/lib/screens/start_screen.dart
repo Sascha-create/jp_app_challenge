@@ -56,7 +56,7 @@ class StartScreen extends StatelessWidget {
                       ),
                       const Padding(
                         padding: EdgeInsets.only(top: 16.0),
-                        child: FancyButton(width: 180, text: "Order Now"),
+                        child: FancyButton(width: 180,height: 48, text: "Order Now"),
                       ),
                     ],
                   ),

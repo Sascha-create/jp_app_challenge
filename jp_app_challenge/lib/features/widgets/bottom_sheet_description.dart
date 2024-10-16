@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glass/glass.dart';
-import 'package:jp_app_challenge/dish_item.dart';
+import 'package:jp_app_challenge/repositories/dish_item.dart';
 
 class BottomSheetDescription extends StatelessWidget {
   const BottomSheetDescription({
@@ -37,7 +37,9 @@ class BottomSheetDescription extends StatelessWidget {
                       size: 18,
                     ),
                   ),
-                  Text(style: Theme.of(context).textTheme.labelLarge, "${currentItem.points}")
+                  Text(
+                      style: Theme.of(context).textTheme.labelLarge,
+                      "${currentItem.points}")
                 ],
               ),
             ),
@@ -46,7 +48,7 @@ class BottomSheetDescription extends StatelessWidget {
                 currentItem.title),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
               child: Text(
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.labelLarge,
@@ -60,7 +62,9 @@ class BottomSheetDescription extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(Icons.euro),
-                  Text(style: Theme.of(context).textTheme.titleMedium, "${currentItem.price}")
+                  Text(
+                      style: Theme.of(context).textTheme.titleLarge,
+                      "${currentItem.price}")
                 ],
               ),
             ),
@@ -71,7 +75,7 @@ class BottomSheetDescription extends StatelessWidget {
             ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

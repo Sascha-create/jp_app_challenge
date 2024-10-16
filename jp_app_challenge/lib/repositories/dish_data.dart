@@ -1,4 +1,4 @@
-import 'package:jp_app_challenge/dish_item.dart';
+import 'package:jp_app_challenge/repositories/dish_item.dart';
 
 List<DishItem> dishItems = [
   DishItem(

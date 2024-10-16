@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jp_app_challenge/dish_item.dart';
+import 'package:jp_app_challenge/repositories/dish_item.dart';
+import 'package:jp_app_challenge/widgets/category_button.dart';
 import 'package:jp_app_challenge/widgets/dish_card.dart';
-import 'package:jp_app_challenge/main.dart';
 import 'package:jp_app_challenge/widgets/top_card.dart';
-import 'package:jp_app_challenge/dish_data.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required this.dishItems});
@@ -12,6 +11,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List buttons = [
+      const CategoryButton(text: "All Categories"),
+      const CategoryButton(text: "Salty"),
+      const CategoryButton(text: "Sweet"),
+      const CategoryButton(text: "Delicious"),
+    ];
     return Scaffold(
       body: Stack(children: [
         Container(
@@ -35,11 +40,17 @@ class HomeScreen extends StatelessWidget {
                       "Choose Your Favorite\nSnack"),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 16, bottom: 32),
-                  child: OutlinedButton(
-                      onPressed: () {}, child: const Text("All Categories")),
-                ), // Carousel mit Buttons einfügen
-
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: SizedBox(
+                      height: 48,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: buttons.length,
+                        itemBuilder: (BuildContext context, int index) =>
+                            buttons[index],
+                      )),
+                ),
                 const Center(child: TopCard()),
                 Padding(
                   padding: const EdgeInsets.only(top: 40, bottom: 16),
@@ -53,7 +64,10 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: dishItems.length,
                       itemBuilder: (BuildContext context, int index) =>
-                          DishCard(dishItem: dishItems[index],currentIndex: index,)),
+                          DishCard(
+                            dishItem: dishItems[index],
+                            currentIndex: index,
+                          )),
                 ),
                 const SizedBox(
                   height: 16,
