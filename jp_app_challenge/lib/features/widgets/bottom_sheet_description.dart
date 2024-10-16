@@ -91,22 +91,22 @@ class BottomSheetDescription extends StatelessWidget {
                       const Row(
                         children: [
                           Icon(
-                            Icons.medication_liquid_sharp,
+                            Icons.fingerprint,
                             color: Colors.grey,
                             size: 28,
                           ),
                           Icon(
-                            Icons.medication_liquid_sharp,
+                            Icons.savings_outlined,
                             color: Colors.grey,
                             size: 28,
                           ),
                           Icon(
-                            Icons.medication_liquid_sharp,
+                            Icons.bug_report_outlined,
                             color: Colors.grey,
                             size: 28,
                           ),
                           Icon(
-                            Icons.medication_liquid_sharp,
+                            Icons.flutter_dash,
                             color: Colors.grey,
                             size: 28,
                           ),
