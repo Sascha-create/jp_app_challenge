@@ -35,7 +35,8 @@ class TopCard extends StatelessWidget {
                     children: [
                       Icon(color: Colors.pink.shade300, Icons.star),
                       Text(
-                          style: Theme.of(context).textTheme.titleSmall, "4.8"),
+                          style: Theme.of(context).textTheme.titleSmall,
+                          dishItem.rating.toString()),
                     ],
                   )
                 ],
@@ -59,8 +60,8 @@ class TopCard extends StatelessWidget {
               ),
               const Padding(
                   padding: EdgeInsets.only(top: 48.0),
-                  child:
-                      TopCardButton(width: 120, height: 40, text: "Add to Order"))
+                  child: TopCardButton(
+                      width: 120, height: 40, text: "Add to Order"))
             ],
           ),
         ),
