@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glass/glass.dart';
-import 'package:jp_app_challenge/repositories/dish_data.dart';
-import 'package:jp_app_challenge/repositories/dish_item.dart';
-import 'package:jp_app_challenge/widgets/top_card.dart';
+
 
 class CategoryButton extends StatelessWidget {
   const CategoryButton({super.key, required this.text, required this.onPressed});

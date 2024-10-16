@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jp_app_challenge/repositories/dish_item.dart';
-import 'package:jp_app_challenge/widgets/fancy_button.dart';
 import 'package:jp_app_challenge/widgets/top_card_button.dart';
 
 class TopCard extends StatelessWidget {
