@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jp_app_challenge/repositories/dish_data.dart';
 import 'package:jp_app_challenge/repositories/dish_item.dart';
 import 'package:jp_app_challenge/widgets/button_list_view.dart';
+import 'package:jp_app_challenge/widgets/categories_dialog.dart';
 import 'package:jp_app_challenge/widgets/category_button.dart';
 import 'package:jp_app_challenge/widgets/dish_card_list_view.dart';
 import 'package:jp_app_challenge/widgets/top_card.dart';
@@ -16,12 +17,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  
   DishItem currentItem = dishItems[5];
   @override
   Widget build(BuildContext context) {
     final List buttons = [
-      CategoryButton(onPressed: () {}, text: "All Categories"),
+      CategoryButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (context) => const CategoriesDialog());
+          },
+          text: "All Categories"),
       CategoryButton(
           onPressed: () {
             setState(() {

@@ -14,7 +14,7 @@ class CustomBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DishItem currentItem = dishItem;
+    final DishItem currentItem = dishItem;
     return Container(
       height: MediaQuery.of(context).size.height * 0.89,
       decoration: BoxDecoration(
