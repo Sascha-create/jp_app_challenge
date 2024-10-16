@@ -4,10 +4,10 @@ import 'package:jp_app_challenge/features/bottomsheet/custom_bottom_sheet.dart';
 
 class DishCard extends StatelessWidget {
   const DishCard(
-      {super.key, required this.dishItem, required this.currentIndex});
+      {super.key, required this.dishItem});
 
   final DishItem dishItem;
-  final int currentIndex;
+ 
 
   @override
   Widget build(BuildContext context) {

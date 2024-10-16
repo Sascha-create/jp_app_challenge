@@ -34,7 +34,7 @@ List<DishItem> dishItems = [
   DishItem(
       imagePath: "assets/images/Burger_3D.png",
       title: "Angi's Burger",
-      description: "Delish vegan Burger",
+      description: "Delicious vegan Burger",
       price: 13.99,
       points: 400),
 ];

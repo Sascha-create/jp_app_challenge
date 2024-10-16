@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jp_app_challenge/screens/start_screen.dart';
-import 'package:jp_app_challenge/widgets/top_card.dart';
 import 'config/styles.dart';
 
 void main() {

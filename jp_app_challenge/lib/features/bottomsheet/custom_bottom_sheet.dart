@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jp_app_challenge/features/widgets/bottom_sheet_button.dart';
 import 'package:jp_app_challenge/repositories/dish_item.dart';
 import 'package:jp_app_challenge/features/widgets/bottom_sheet_description.dart';
-import 'package:jp_app_challenge/widgets/fancy_button.dart';
 import 'package:jp_app_challenge/features/widgets/number_button.dart';
 import 'package:jp_app_challenge/features/widgets/size_button.dart';
 
@@ -42,7 +42,7 @@ class CustomBottomSheet extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 32.0),
-                    child: FancyButton(
+                    child: BottomSheetButton(
                         width: 390,
                         height: 48,
                         text: "Add to order for ${currentItem.price}"),

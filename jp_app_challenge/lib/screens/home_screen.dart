@@ -1,21 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:jp_app_challenge/repositories/dish_data.dart';
 import 'package:jp_app_challenge/repositories/dish_item.dart';
+import 'package:jp_app_challenge/widgets/button_list_view.dart';
 import 'package:jp_app_challenge/widgets/category_button.dart';
-import 'package:jp_app_challenge/widgets/dish_card.dart';
+import 'package:jp_app_challenge/widgets/dish_card_list_view.dart';
 import 'package:jp_app_challenge/widgets/top_card.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.dishItems});
 
   final List<DishItem> dishItems;
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  
+  DishItem currentItem = dishItems[5];
+  @override
   Widget build(BuildContext context) {
     final List buttons = [
-      const CategoryButton(text: "All Categories"),
-      const CategoryButton(text: "Salty"),
-      const CategoryButton(text: "Sweet"),
-      const CategoryButton(text: "Delicious"),
+      CategoryButton(onPressed: () {}, text: "All Categories"),
+      CategoryButton(
+          onPressed: () {
+            setState(() {
+              currentItem = dishItems[5];
+            });
+          },
+          text: "Salty"),
+      CategoryButton(
+          onPressed: () {
+            setState(() {
+              currentItem = dishItems[2];
+            });
+          },
+          text: "Sweet"),
+      CategoryButton(
+          onPressed: () {
+            setState(() {
+              currentItem = dishItems[1];
+            });
+          },
+          text: "Delicious"),
+      CategoryButton(
+          onPressed: () {
+            setState(() {
+              currentItem = dishItems[3];
+            });
+          },
+          text: "Sticky"),
+      CategoryButton(
+          onPressed: () {
+            setState(() {
+              currentItem = dishItems[4];
+            });
+          },
+          text: "Waffle"),
     ];
     return Scaffold(
       body: Stack(children: [
@@ -39,36 +80,18 @@ class HomeScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.headlineMedium,
                       "Choose Your Favorite\nSnack"),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  child: SizedBox(
-                      height: 48,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: buttons.length,
-                        itemBuilder: (BuildContext context, int index) =>
-                            buttons[index],
-                      )),
-                ),
-                const Center(child: TopCard()),
+                ButtonListView(buttons: buttons),
+                Center(
+                    child: TopCard(
+                  dishItem: currentItem,
+                )),
                 Padding(
                   padding: const EdgeInsets.only(top: 40, bottom: 16),
                   child: Text(
                       style: Theme.of(context).textTheme.titleLarge,
                       "We Recommend"),
                 ),
-                Expanded(
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: dishItems.length,
-                      itemBuilder: (BuildContext context, int index) =>
-                          DishCard(
-                            dishItem: dishItems[index],
-                            currentIndex: index,
-                          )),
-                ),
+                DishCardListView(widget: widget),
                 const SizedBox(
                   height: 16,
                 )

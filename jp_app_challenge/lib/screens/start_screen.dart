@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:glass/glass.dart';
-import 'package:jp_app_challenge/screens/home_screen.dart';
 import 'package:jp_app_challenge/widgets/fancy_button.dart';
 
 class StartScreen extends StatelessWidget {
