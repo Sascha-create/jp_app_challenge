@@ -8,4 +8,4 @@ Nach 3 Tagen musste das Ergebnis präsentiert werden.
 
 
 
-![alt text](assets/screenshots/startscreen.png){ width: 200px; }  ![alt text](assets/screenshots/homescreen.png)  ![alt text](assets/screenshots/bottomsheet.png)
+[<img src="assets/screenshots/startscreen.png" width="250"/>](assets/screenshots/startscreen.png)  ![alt text](assets/screenshots/homescreen.png)  ![alt text](assets/screenshots/bottomsheet.png)
